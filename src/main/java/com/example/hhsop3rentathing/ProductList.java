@@ -26,7 +26,32 @@ public class ProductList extends Observable {
         return productList;
     }
 
+    public RentableProduct getProduct(int id) {
+        boolean searching = true;
+        int i = 0;
+        int lowest = 0;
+        int highest = productList.size()-1;
+        while (searching) {
+            int prodId = productList.get(i).getId();
+            if(prodId == id) {
+                return productList.get(i);
+            }
+            if(prodId < i) highest = i;
+            if(prodId > i) lowest = i;
+            i = (highest - lowest) / 2 + lowest;
+            if(highest == lowest) searching = false;
+        }
+        return null;
+    }
+
+    public void updateProduct(int id, RentableProduct product) {
+        int index = productList.indexOf(getProduct(id));
+        product.setId(id);
+        productList.set(index, product);
+    }
+
     public void addProduct(RentableProduct product) {
+        product.setId(productList.get(productList.size()-1).getId()+1);
         productList.add(product);
         setChanged();
         notifyObservers();
