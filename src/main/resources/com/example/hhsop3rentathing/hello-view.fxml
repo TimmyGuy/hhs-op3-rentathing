@@ -1,16 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.hhsop3rentathing.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#receiveData" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.hhsop3rentathing.HelloController">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <TabPane prefHeight="407.0" prefWidth="607.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Overzicht">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane prefHeight="381.0" prefWidth="607.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <TableView fx:id="table_products" prefHeight="379.0" prefWidth="607.0">
+                                            <columns>
+                                              <TableColumn fx:id="prodId" prefWidth="43.0" text="#" />
+                                              <TableColumn fx:id="prodName" prefWidth="97.0" text="Product" />
+                                                <TableColumn fx:id="prodDescr" prefWidth="385.0" text="Omschrijving" />
+                                                <TableColumn fx:id="available" prefWidth="81.0" text="Beschikbaar" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Beheer">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Button layoutX="43.0" layoutY="14.0" mnemonicParsing="false" onAction="#addTestItem" text="Add" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </Pane>
+      <Text fx:id="username" layoutX="399.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gebruikersnaam" wrappingWidth="130.13671875" />
+      <Button fx:id="logout_btn" layoutX="529.0" layoutY="1.0" mnemonicParsing="false" onAction="#logoutAction" text="Uitloggen" />
+   </children>
+</AnchorPane>
