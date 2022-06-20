@@ -1,8 +1,11 @@
 package com.example.hhsop3rentathing.entities;
 
+import com.example.hhsop3rentathing.products.RentableProduct;
+
 public class User {
     private String username;
     private String password;
+    private RentableProduct productInUse;
 
     public User() {
     }
@@ -26,5 +29,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public RentableProduct getProductInUse() {
+        return productInUse;
+    }
+
+    public void setProductInUse(RentableProduct productInUse) {
+        this.productInUse = productInUse;
     }
 }
