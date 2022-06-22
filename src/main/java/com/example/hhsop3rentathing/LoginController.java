@@ -13,8 +13,18 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class LoginController {
-    private ArrayList<User> users = new ArrayList<>();
     static ArrayList<User> loggedInUsers = new ArrayList<>();
+    private final ArrayList<User> users = new ArrayList<>();
+    @FXML
+    private Text incorrect_password;
+    @FXML
+    private Text incorrect_user;
+    @FXML
+    private Button login_btn;
+    @FXML
+    private PasswordField passsword_input;
+    @FXML
+    private TextField username_input;
 
     public LoginController() {
         users.add(new User("timohlsen", "test123"));
@@ -23,34 +33,19 @@ public class LoginController {
     }
 
     @FXML
-    private Text incorrect_password;
-
-    @FXML
-    private Text incorrect_user;
-
-    @FXML
-    private Button login_btn;
-
-    @FXML
-    private PasswordField passsword_input;
-
-    @FXML
-    private TextField username_input;
-
-    @FXML
     void loginUser(ActionEvent event) {
         boolean foundUser = false;
         incorrect_user.setFill(Color.TRANSPARENT);
         incorrect_password.setFill(Color.TRANSPARENT);
 
-        for(User user : users) {
-            if(user.getUsername().equals(username_input.getText())) {
+        for (User user : users) {
+            if (user.getUsername().equals(username_input.getText())) {
                 if (user.getPassword().equals(passsword_input.getText())) {
                     foundUser = true;
                     username_input.setText("");
                     passsword_input.setText("");
 
-                    if(loggedInUsers.contains(user)) return;
+                    if (loggedInUsers.contains(user)) return;
 
                     loggedInUsers.add(user);
 
@@ -65,7 +60,7 @@ public class LoginController {
                 }
             }
         }
-        if(!foundUser) {
+        if (!foundUser) {
             incorrect_user.setFill(Color.RED);
         }
     }

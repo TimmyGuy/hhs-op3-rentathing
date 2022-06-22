@@ -1,17 +1,16 @@
 package com.example.hhsop3rentathing;
 
 import com.example.hhsop3rentathing.entities.RentedLog;
-import com.example.hhsop3rentathing.entities.User;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class HelloApplication extends Application {
-    static SceneController sceneController = new SceneController();
+    static final SceneController sceneController = new SceneController();
     static ProductList productList;
+
+    public static void main(String[] args) {
+        launch();
+    }
 
     @Override
     public void start(Stage stage) {
@@ -36,9 +35,5 @@ public class HelloApplication extends Application {
         productList = new ProductList();
         RentedLog.addRentedLog(new RentedLog(1, 3, "Tim", "Ohlsen", true));
         RentedLog.addRentedLog(new RentedLog(2, 8, "John", "Doe", false));
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }

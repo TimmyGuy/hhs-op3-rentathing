@@ -1,8 +1,6 @@
 package com.example.hhsop3rentathing;
 
-import com.example.hhsop3rentathing.entities.RentedLog;
 import com.example.hhsop3rentathing.entities.User;
-import com.example.hhsop3rentathing.factory.ProductFactory;
 import com.example.hhsop3rentathing.products.Car;
 import com.example.hhsop3rentathing.products.Drill;
 import com.example.hhsop3rentathing.products.RentableProduct;
@@ -40,9 +38,6 @@ public class AddController {
     private Text prod_type;
 
     @FXML
-    private Button return_btn;
-
-    @FXML
     private Text username;
 
     @FXML
@@ -51,22 +46,22 @@ public class AddController {
         user = (User) stage.getUserData();
         username.setText(user.getUsername());
 
-        if(product == null) {
+        if (product == null) {
             product = user.getProductInUse();
             setProductInfo(product);
         }
     }
 
-    void setProductInfo (RentableProduct product) {
-        if(product instanceof Car) {
+    void setProductInfo(RentableProduct product) {
+        if (product instanceof Car) {
             prod_type.setText("Auto");
             prod_info1.setPromptText("Merk");
             prod_info2.setPromptText("Gewicht");
-        } else if(product instanceof Truck) {
+        } else if (product instanceof Truck) {
             prod_type.setText("Vrachtwagen");
             prod_info1.setPromptText("Laadgewicht");
             prod_info2.setPromptText("Gewicht");
-        } else if(product instanceof Drill) {
+        } else if (product instanceof Drill) {
             prod_type.setText("Boormachine");
             prod_info1.setPromptText("Merk");
             prod_info2.setPromptText("Type");
@@ -74,20 +69,19 @@ public class AddController {
     }
 
 
-
     @FXML
     void addProduct(ActionEvent event) {
-        if(product instanceof Car) {
+        if (product instanceof Car) {
             product.setName(prod_name.getText());
             product.setDescription(prod_descr.getText());
             ((Car) product).setBrand(prod_info1.getText());
             ((Car) product).setWeight(Integer.parseInt(prod_info2.getText()));
-        } else if(product instanceof Truck) {
+        } else if (product instanceof Truck) {
             product.setName(prod_name.getText());
             product.setDescription(prod_descr.getText());
             ((Truck) product).setCargoWeight(Integer.parseInt(prod_info1.getText()));
             ((Truck) product).setWeight(Integer.parseInt(prod_info2.getText()));
-        } else if(product instanceof Drill) {
+        } else if (product instanceof Drill) {
             product.setName(prod_name.getText());
             product.setDescription(prod_descr.getText());
             ((Drill) product).setBrand(prod_info1.getText());

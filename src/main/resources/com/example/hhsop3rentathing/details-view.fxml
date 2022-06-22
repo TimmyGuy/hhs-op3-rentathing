@@ -1,33 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
+
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Text?>
-
-
-<AnchorPane onMouseEntered="#receiveData" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hhsop3rentathing.DetailsController">
-   <children>
-      <Pane prefHeight="400.0" prefWidth="608.0">
-         <children>
-            <Button fx:id="return_btn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnToDashboard" text="Terug" />
-            <Button fx:id="logout_btn" layoutX="533.0" layoutY="14.0" mnemonicParsing="false" onAction="#logoutAction" text="Uitloggen" />
-            <Button fx:id="retour_btn" layoutX="184.0" layoutY="74.0" mnemonicParsing="false" onAction="#handleRetour" prefHeight="25.0" prefWidth="68.0" text="Retour" />
-            <Text fx:id="show_price_text" layoutX="20.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Totale prijs per dag:" />
-            <Text fx:id="price_text" layoutX="137.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0.00" />
-            <CheckBox fx:id="insurance_checkbox" layoutX="20.0" layoutY="155.0" mnemonicParsing="false" onAction="#adjustInsurance" text="Verzekeren?" />
-            <TextField fx:id="first_name" layoutX="20.0" layoutY="74.0" promptText="Voornaam" />
-            <TextField fx:id="last_name" layoutX="20.0" layoutY="108.0" promptText="Achternaam" />
-            <Text layoutX="296.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productinformatie:" />
-            <TextField fx:id="prod_name" editable="false" layoutX="296.0" layoutY="99.0" />
-            <TextArea fx:id="prod_descr" editable="false" layoutX="296.0" layoutY="129.0" prefHeight="69.0" prefWidth="200.0" />
-            <TextField fx:id="prod_info1" editable="false" layoutX="296.0" layoutY="203.0" />
-            <TextField fx:id="prod_info2" editable="false" layoutX="296.0" layoutY="233.0" />
-         </children>
-      </Pane>
-      <Text fx:id="username" layoutX="409.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gebruikersnaam" wrappingWidth="130.13671875" />
-   </children>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" onMouseEntered="#receiveData" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/18" fx:controller="com.example.hhsop3rentathing.DetailsController">
+    <children>
+        <Pane prefHeight="400.0" prefWidth="608.0">
+            <children>
+                <Button fx:id="return_btn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false"
+                        onAction="#returnToDashboard" text="Terug"/>
+                <Button fx:id="logout_btn" layoutX="533.0" layoutY="14.0" mnemonicParsing="false"
+                        onAction="#logoutAction" text="Uitloggen"/>
+                <Button fx:id="retour_btn" layoutX="184.0" layoutY="74.0" mnemonicParsing="false"
+                        onAction="#handleRetour" prefHeight="25.0" prefWidth="68.0" text="Retour"/>
+                <Text fx:id="show_price_text" layoutX="20.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="Totale prijs per dag:"/>
+                <Text fx:id="price_text" layoutX="137.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0"
+                      text="0.00"/>
+                <CheckBox fx:id="insurance_checkbox" layoutX="20.0" layoutY="155.0" mnemonicParsing="false"
+                          onAction="#adjustInsurance" text="Verzekeren?"/>
+                <TextField fx:id="first_name" layoutX="20.0" layoutY="74.0" promptText="Voornaam"/>
+                <TextField fx:id="last_name" layoutX="20.0" layoutY="108.0" promptText="Achternaam"/>
+                <Text layoutX="296.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productinformatie:"/>
+                <TextField fx:id="prod_name" editable="false" layoutX="296.0" layoutY="99.0"/>
+                <TextArea fx:id="prod_descr" editable="false" layoutX="296.0" layoutY="129.0" prefHeight="69.0"
+                          prefWidth="200.0"/>
+                <TextField fx:id="prod_info1" editable="false" layoutX="296.0" layoutY="203.0"/>
+                <TextField fx:id="prod_info2" editable="false" layoutX="296.0" layoutY="233.0"/>
+            </children>
+        </Pane>
+        <Text fx:id="username" layoutX="409.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Gebruikersnaam" wrappingWidth="130.13671875"/>
+    </children>
 </AnchorPane>

@@ -3,7 +3,6 @@ package com.example.hhsop3rentathing;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
 import java.net.URL;
@@ -14,10 +13,6 @@ public class SceneController {
 
     public void addScreen(String name, String screen) {
         screens.put(name, HelloApplication.class.getResource(screen));
-    }
-
-    public void removeScreen(String name) {
-        screens.remove(name);
     }
 
     public Scene activate(String name) throws IOException {

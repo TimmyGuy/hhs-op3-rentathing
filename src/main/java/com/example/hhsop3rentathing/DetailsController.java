@@ -79,19 +79,19 @@ public class DetailsController implements Observer, Initializable {
         user = (User) stage.getUserData();
         username.setText(user.getUsername());
 
-        if(product == null) {
+        if (product == null) {
             product = user.getProductInUse();
             setProductInfo(product);
         }
     }
 
-    void setProductInfo (RentableProduct product) {
+    void setProductInfo(RentableProduct product) {
         prod_name.setText(product.getName());
         prod_descr.setText(product.getDescription());
 
         price_text.setText(String.format("%.2f", product.getPricePerDay()));
 
-        if(product instanceof Car) {
+        if (product instanceof Car) {
             prod_info1.setText(((Car) product).getBrand());
             prod_info2.setText(((Car) product).getWeight() + "kg gewicht");
         } else if (product instanceof Drill) {
@@ -104,7 +104,7 @@ public class DetailsController implements Observer, Initializable {
 
         retour_btn.setText("Verhuur");
 
-        if(product.getAvailable().equals("Nee")) {
+        if (product.getAvailable().equals("Nee")) {
             RentedLog log = RentedLog.getRentedLog(product.getId());
             first_name.setText(log.getFirstName());
             first_name.setEditable(false);
@@ -112,7 +112,7 @@ public class DetailsController implements Observer, Initializable {
             last_name.setEditable(false);
             retour_btn.setText("Retour");
             insurance_checkbox.setVisible(false);
-            if(log.hasInsurance()) {
+            if (log.hasInsurance()) {
                 price_text.setText(String.format("%.2f", product.getPricePerDay() + product.getInsurance()));
             }
         } else {
@@ -126,7 +126,7 @@ public class DetailsController implements Observer, Initializable {
 
     @FXML
     void handleRetour(ActionEvent event) {
-        if(product.isAvailable()) {
+        if (product.isAvailable()) {
             RentedLog log = RentedLog.getRentedLog(product.getId());
             RentedLog.removeRentedLog(log);
             product.setInStorage(true);

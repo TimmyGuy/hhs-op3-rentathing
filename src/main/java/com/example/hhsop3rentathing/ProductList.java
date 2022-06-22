@@ -10,7 +10,7 @@ import javafx.collections.ObservableList;
 import java.util.Observable;
 
 public class ProductList extends Observable {
-    private ObservableList<RentableProduct> productList = FXCollections.observableArrayList(
+    private final ObservableList<RentableProduct> productList = FXCollections.observableArrayList(
             new Car(1, "BMW 116", "Executive sporteditie", "BWM", 800, true),
             new Drill(2, "Makita HP457DWE", "Boor-/schroefmachine", "Makita", "HP457DWE", true),
             new Truck(3, "Volvo FH 500", "2x Tanks/ Leasing", 800, 1200, false),
@@ -27,8 +27,8 @@ public class ProductList extends Observable {
     }
 
     public RentableProduct getProduct(int id) {
-        for(RentableProduct product : productList) {
-            if(product.getId() == id) {
+        for (RentableProduct product : productList) {
+            if (product.getId() == id) {
                 return product;
             }
         }
@@ -44,7 +44,7 @@ public class ProductList extends Observable {
     }
 
     public void addProduct(RentableProduct product) {
-        product.setId(productList.get(productList.size()-1).getId()+1);
+        product.setId(productList.get(productList.size() - 1).getId() + 1);
         productList.add(product);
         setChanged();
         notifyObservers();

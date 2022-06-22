@@ -2,7 +2,6 @@ package com.example.hhsop3rentathing;
 
 import com.example.hhsop3rentathing.entities.User;
 import com.example.hhsop3rentathing.factory.ProductFactory;
-import com.example.hhsop3rentathing.products.Car;
 import com.example.hhsop3rentathing.products.RentableProduct;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -55,10 +54,10 @@ public class HelloController implements Initializable, Observer {
         available.setCellValueFactory(new PropertyValueFactory<>("Available"));
 
         table_products.setItems(productList.getProductList());
-        table_products.setRowFactory( tv -> {
+        table_products.setRowFactory(tv -> {
             TableRow<RentableProduct> row = new TableRow<>();
             row.setOnMouseClicked(event -> {
-                if(!row.isEmpty()) {
+                if (!row.isEmpty()) {
                     RentableProduct prod = row.getItem();
                     user.setProductInUse(prod);
                     Stage stage = (Stage) username.getScene().getWindow();
@@ -72,7 +71,6 @@ public class HelloController implements Initializable, Observer {
         // Observer pattern
         productList.addObserver(this);
     }
-
 
 
     @FXML

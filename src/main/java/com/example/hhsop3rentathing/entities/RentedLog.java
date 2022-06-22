@@ -1,17 +1,15 @@
 package com.example.hhsop3rentathing.entities;
 
-import com.example.hhsop3rentathing.products.RentableProduct;
-
 import java.util.ArrayList;
 
 public class RentedLog {
     static ArrayList<RentedLog> rentedLogs = new ArrayList<>();
 
     private int id;
-    private int prodId;
-    private String firstName;
-    private String lastName;
-    private boolean insurance;
+    private final int prodId;
+    private final String firstName;
+    private final String lastName;
+    private final boolean insurance;
 
     public RentedLog(int id, int prodId, String firstName, String lastName, boolean insurance) {
         this.id = id;
@@ -21,49 +19,9 @@ public class RentedLog {
         this.insurance = insurance;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getProdId() {
-        return prodId;
-    }
-
-    public void setProdId(int prodId) {
-        this.prodId = prodId;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public boolean hasInsurance() {
-        return insurance;
-    }
-
-    public void setInsurance(boolean insurance) {
-        this.insurance = insurance;
-    }
-
     static public RentedLog getRentedLog(int prodId) {
-        for(RentedLog rentedLog : rentedLogs) {
-            if(rentedLog.getProdId() == prodId) {
+        for (RentedLog rentedLog : rentedLogs) {
+            if (rentedLog.getProdId() == prodId) {
                 return rentedLog;
             }
         }
@@ -77,5 +35,25 @@ public class RentedLog {
 
     static public void removeRentedLog(RentedLog log) {
         rentedLogs.remove(log);
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getProdId() {
+        return prodId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public boolean hasInsurance() {
+        return insurance;
     }
 }
