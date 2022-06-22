@@ -4,6 +4,7 @@ public class Truck extends RentableProduct {
     private int cargoWeight;
     private int weight;
 
+    public Truck() {}
     public Truck(int id, String name, String description, int cargoWeight, int weight, boolean inStorage) {
         super(id, name, description, -1, inStorage);
         this.cargoWeight = cargoWeight;

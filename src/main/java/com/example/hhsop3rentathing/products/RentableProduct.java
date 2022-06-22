@@ -10,6 +10,8 @@ public abstract class RentableProduct {
     protected int pricePerDay;
     protected boolean inStorage;
 
+    public RentableProduct() {};
+
     public RentableProduct(int id, String name, String description, int pricePerDay, boolean inStorage) {
         this.id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);

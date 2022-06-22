@@ -4,6 +4,8 @@ public class Car extends RentableProduct {
     private String brand;
     private int weight;
 
+    public Car() {}
+
     public Car(int id, String name, String description, String brand, int weight, boolean inStorage) {
         super(id, name, description, 50, inStorage);
         this.brand = brand;
