@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
@@ -53,6 +54,21 @@ public class HelloController implements Initializable, Observer {
         available.setCellValueFactory(new PropertyValueFactory<>("Available"));
 
         table_products.setItems(productList.getProductList());
+        table_products.setRowFactory( tv -> {
+            TableRow<RentableProduct> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if(!row.isEmpty()) {
+                    RentableProduct prod = row.getItem();
+                    user.setProductInUse(prod);
+                    Stage stage = (Stage) username.getScene().getWindow();
+                    stage.setUserData(user);
+                    HelloApplication.sceneController.loadScreen("details", stage);
+                }
+            });
+            return row;
+        });
+
+        // Observer pattern
         productList.addObserver(this);
     }
 
