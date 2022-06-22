@@ -1,6 +1,7 @@
 package com.example.hhsop3rentathing;
 
 import com.example.hhsop3rentathing.entities.User;
+import com.example.hhsop3rentathing.factory.ProductFactory;
 import com.example.hhsop3rentathing.products.Car;
 import com.example.hhsop3rentathing.products.RentableProduct;
 import javafx.event.ActionEvent;
@@ -89,8 +90,27 @@ public class HelloController implements Initializable, Observer {
     }
 
     @FXML
-    void addTestItem(ActionEvent event) {
-        productList.addProduct(new Car(88, "test", "test", "test", 8, true));
+    void addCar(ActionEvent event) {
+        Stage stage = (Stage) username.getScene().getWindow();
+        user.setProductInUse(ProductFactory.create("car"));
+        stage.setUserData(user);
+        HelloApplication.sceneController.loadScreen("add", stage);
+    }
+
+    @FXML
+    void addDrill(ActionEvent event) {
+        Stage stage = (Stage) username.getScene().getWindow();
+        user.setProductInUse(ProductFactory.create("drill"));
+        stage.setUserData(user);
+        HelloApplication.sceneController.loadScreen("add", stage);
+    }
+
+    @FXML
+    void addTruck(ActionEvent event) {
+        Stage stage = (Stage) username.getScene().getWindow();
+        user.setProductInUse(ProductFactory.create("truck"));
+        stage.setUserData(user);
+        HelloApplication.sceneController.loadScreen("add", stage);
     }
 
     @Override

@@ -4,7 +4,9 @@ public class Drill extends RentableProduct {
     private String brand;
     private String type;
 
-    public Drill() {}
+    public Drill() {
+        this.pricePerDay = 5;
+    }
 
     public Drill(int id, String name, String description, String brand, String type, boolean inStorage) {
         super(id, name, description, 5, inStorage);

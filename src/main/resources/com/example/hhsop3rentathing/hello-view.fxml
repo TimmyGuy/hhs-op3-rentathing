@@ -8,10 +8,10 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#receiveData" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.hhsop3rentathing.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#receiveData" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hhsop3rentathing.HelloController">
    <children>
       <Pane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -45,7 +45,30 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <Button layoutX="43.0" layoutY="14.0" mnemonicParsing="false" onAction="#addTestItem" text="Add" />
+                              <Text layoutX="113.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Auto">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="223.0" layoutY="155.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vrachtauto">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="383.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Boormachine">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Text>
+                              <Button layoutX="99.0" layoutY="164.0" mnemonicParsing="false" onAction="#addCar" text="Toevoegen" />
+                              <Button layoutX="238.0" layoutY="164.0" mnemonicParsing="false" onAction="#addTruck" text="Toevoegen" />
+                              <Button layoutX="408.0" layoutY="164.0" mnemonicParsing="false" onAction="#addDrill" text="Toevoegen" />
+                              <Text layoutX="199.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Product toevoegen" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Italic" size="19.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="257.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beheer" />
                            </children>
                         </AnchorPane>
                   </content>

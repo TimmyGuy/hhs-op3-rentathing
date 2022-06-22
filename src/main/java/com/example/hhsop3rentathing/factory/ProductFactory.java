@@ -8,11 +8,11 @@ import com.example.hhsop3rentathing.products.Truck;
 import java.util.Locale;
 
 public class ProductFactory {
-    final String CAR = "car";
-    final String TRUCK = "truck";
-    final String DRILL = "drill";
+    final static String CAR = "car";
+    final static String TRUCK = "truck";
+    final static String DRILL = "drill";
 
-    public RentableProduct create(String prodType) {
+    public static RentableProduct create(String prodType) {
         switch (prodType.toLowerCase(Locale.ROOT)) {
             case CAR:
                 return new Car();

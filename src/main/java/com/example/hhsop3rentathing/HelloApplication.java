@@ -30,6 +30,7 @@ public class HelloApplication extends Application {
         sceneController.addScreen("dashboard", "hello-view.fxml");
         sceneController.addScreen("login", "login-view.fxml");
         sceneController.addScreen("details", "details-view.fxml");
+        sceneController.addScreen("add", "add-view.fxml");
 
         // Load products and logs
         productList = new ProductList();
