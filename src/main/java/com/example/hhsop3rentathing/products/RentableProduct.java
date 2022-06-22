@@ -48,8 +48,16 @@ public abstract class RentableProduct {
 
     public abstract double getInsurance();
 
+    public void setInStorage(boolean inStorage) {
+        this.inStorage = inStorage;
+    }
+
     public String getAvailable() {
         return inStorage ? "Ja" : "Nee";
+    }
+
+    public boolean isAvailable() {
+        return !inStorage;
     }
 
 }
