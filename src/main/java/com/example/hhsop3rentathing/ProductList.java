@@ -27,19 +27,10 @@ public class ProductList extends Observable {
     }
 
     public RentableProduct getProduct(int id) {
-        boolean searching = true;
-        int i = 0;
-        int lowest = 0;
-        int highest = productList.size()-1;
-        while (searching) {
-            int prodId = productList.get(i).getId();
-            if(prodId == id) {
-                return productList.get(i);
+        for(RentableProduct product : productList) {
+            if(product.getId() == id) {
+                return product;
             }
-            if(prodId < i) highest = i;
-            if(prodId > i) lowest = i;
-            i = (highest - lowest) / 2 + lowest;
-            if(highest == lowest) searching = false;
         }
         return null;
     }
@@ -48,6 +39,8 @@ public class ProductList extends Observable {
         int index = productList.indexOf(getProduct(id));
         product.setId(id);
         productList.set(index, product);
+        setChanged();
+        notifyObservers();
     }
 
     public void addProduct(RentableProduct product) {
