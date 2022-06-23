@@ -12,7 +12,7 @@ public class ProductFactory {
     final static String TRUCK = "truck";
     final static String DRILL = "drill";
 
-    public static RentableProduct create(String prodType) {
+    public static RentableProduct create(String prodType) throws Exception {
         switch (prodType.toLowerCase(Locale.ROOT)) {
             case CAR:
                 return new Car();
@@ -21,7 +21,6 @@ public class ProductFactory {
             case DRILL:
                 return new Drill();
         }
-        System.out.println("Product not found! Try again");
-        return null;
+        throw new Exception("No product found with this product type");
     }
 }

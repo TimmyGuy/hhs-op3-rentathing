@@ -47,6 +47,9 @@ public class AddController {
         username.setText(user.getUsername());
 
         if (product == null) {
+            if(user.getProductInUse() == null) {
+                HelloApplication.sceneController.loadScreen("dashboard", stage);
+            }
             product = user.getProductInUse();
             setProductInfo(product);
         }
