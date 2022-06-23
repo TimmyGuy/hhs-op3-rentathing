@@ -90,7 +90,11 @@ public class HelloController implements Initializable, Observer {
     @FXML
     void addCar(ActionEvent event) {
         Stage stage = (Stage) username.getScene().getWindow();
-        user.setProductInUse(ProductFactory.create("car"));
+        try {
+            user.setProductInUse(ProductFactory.create("car"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         stage.setUserData(user);
         HelloApplication.sceneController.loadScreen("add", stage);
     }
@@ -98,7 +102,11 @@ public class HelloController implements Initializable, Observer {
     @FXML
     void addDrill(ActionEvent event) {
         Stage stage = (Stage) username.getScene().getWindow();
-        user.setProductInUse(ProductFactory.create("drill"));
+        try {
+            user.setProductInUse(ProductFactory.create("drill"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         stage.setUserData(user);
         HelloApplication.sceneController.loadScreen("add", stage);
     }
@@ -106,7 +114,11 @@ public class HelloController implements Initializable, Observer {
     @FXML
     void addTruck(ActionEvent event) {
         Stage stage = (Stage) username.getScene().getWindow();
-        user.setProductInUse(ProductFactory.create("truck"));
+        try {
+            user.setProductInUse(ProductFactory.create("truck"));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
         stage.setUserData(user);
         HelloApplication.sceneController.loadScreen("add", stage);
     }

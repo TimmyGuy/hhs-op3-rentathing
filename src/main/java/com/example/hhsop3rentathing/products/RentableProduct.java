@@ -49,6 +49,16 @@ public abstract class RentableProduct {
         return pricePerDay;
     }
 
+    public double getPrice(boolean withInsurance) {
+        double fullPrice = getPricePerDay();
+
+        if(withInsurance) {
+            fullPrice += getInsurance();
+        }
+
+        return fullPrice;
+    }
+
     public abstract double getInsurance();
 
     public void setInStorage(boolean inStorage) {

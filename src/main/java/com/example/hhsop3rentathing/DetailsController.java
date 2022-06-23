@@ -89,7 +89,7 @@ public class DetailsController implements Observer, Initializable {
         prod_name.setText(product.getName());
         prod_descr.setText(product.getDescription());
 
-        price_text.setText(String.format("%.2f", product.getPricePerDay()));
+        price_text.setText(String.format("%.2f", product.getPrice(false)));
 
         if (product instanceof Car) {
             prod_info1.setText(((Car) product).getBrand());
@@ -113,7 +113,7 @@ public class DetailsController implements Observer, Initializable {
             retour_btn.setText("Retour");
             insurance_checkbox.setVisible(false);
             if (log.hasInsurance()) {
-                price_text.setText(String.format("%.2f", product.getPricePerDay() + product.getInsurance()));
+                price_text.setText(String.format("%.2f", product.getPrice(true)));
             }
         } else {
             first_name.setEditable(true);
@@ -142,9 +142,9 @@ public class DetailsController implements Observer, Initializable {
     @FXML
     void adjustInsurance(ActionEvent event) {
         if (insurance_checkbox.isSelected()) {
-            price_text.setText(String.format("%.2f", product.getPricePerDay() + product.getInsurance()));
+            price_text.setText(String.format("%.2f", product.getPrice(true)));
         } else {
-            price_text.setText(String.format("%.2f", product.getPricePerDay()));
+            price_text.setText(String.format("%.2f", product.getPrice(false)));
         }
     }
 
